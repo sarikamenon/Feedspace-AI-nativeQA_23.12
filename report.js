@@ -6,18 +6,16 @@ const options = {
     output: 'reports/cucumber-report.html',
     reportSuiteAsScenarios: true,
     scenarioTimestamp: true,
-    launchReport: false,
+    launchReport: true,
     metadata: {
         "App Version": "1.0.0",
         "Test Environment": "STAGING",
         "Browser": "Chrome/Playwright",
-        "Platform": "Ubuntu",
+        "Platform": "Windows",
         "Parallel": "Scenarios",
-        "Executed": "GitHub Actions"
+        "Executed": "Local"
     },
     failedSummaryReport: true,
 };
 
-console.log('Generating HTML report...');
 reporter.generate(options);
-console.log('HTML report generated successfully at reports/cucumber-report.html');

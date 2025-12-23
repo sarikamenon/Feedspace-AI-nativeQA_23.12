@@ -16,43 +16,38 @@ class PagesPage {
         const btnRole = this.page.getByRole('button', { name: /create page/i });
 
         // Specific locators based on analysis
-        const btnEmpty = this.page.locator('#page-list-nodata button:has-text("Create Page")').first();
-        const btnExists = this.page.locator('button:has-text("Create Page")').first();
+        const btnEmpty = this.page.locator('#page-list-nodata button:has-text("Create Page")');
+        const btnExists = this.page.locator('button.page-name-modal:has-text("Create Page")');
 
         let btn;
 
         try {
-            if (await btnEmpty.isVisible({ timeout: 5000 }).catch(() => false)) {
+            if (await btnRole.count() > 0 && await btnRole.first().isVisible()) {
+                console.log('Found Create Page button by Role');
+                btn = btnRole.first();
+            } else if (await btnEmpty.isVisible().catch(() => false)) {
                 console.log('Found Create Page button (Empty State)');
                 btn = btnEmpty;
-            } else if (await btnExists.isVisible({ timeout: 5000 }).catch(() => false)) {
-                console.log('Found Create Page button (Existing Pages or Header)');
+            } else if (await btnExists.isVisible().catch(() => false)) {
+                console.log('Found Create Page button (Existing Pages)');
                 btn = btnExists;
             } else {
-                console.log('Trying role-based fallback...');
-                btn = this.page.getByRole('button', { name: /create page/i }).first();
+                // Fallback to text if neither specific structure is found. Ensure it is visible.
+                console.log('Specific locators not found, trying generic fallback with visibility check...');
+                // select any button with text "Create Page" that is actually visible
+                btn = this.page.locator('button:has-text("Create Page")').locator('visible=true').first();
+            }
+
+            if (!btn) {
+                // Last ditch effort: waiting for the generic button
+                console.log('Waiting for any "Create Page" button to appear...');
+                btn = this.page.locator('button:has-text("Create Page")').first();
+                await btn.waitFor({ state: 'visible', timeout: 5000 });
             }
 
             await btn.waitFor({ state: 'visible', timeout: 30000 });
             await btn.click();
             console.log('Clicked on the Create Page button');
-
-            // --- AI HEALING: Check for Name Modal with increased timeout ---
-            const nameInput = this.page.locator('input[placeholder*="Name" i], input[name*="name" i]').first();
-            const saveBtn = this.page.locator('button:has-text("Save"), button:has-text("Create")').first();
-
-            if (await nameInput.isVisible({ timeout: 15000 }).catch(() => false)) {
-                console.log('Detected Page Name modal. Entering name...');
-                const pageName = `Automation Page ${new Date().getTime()}`;
-                await nameInput.fill(pageName);
-                await this.page.waitForTimeout(1000);
-                await saveBtn.click();
-                console.log(`Page name "${pageName}" entered and saved.`);
-
-                // Explicitly wait for the list container to appear after saving
-                console.log('Waiting for review selection container...');
-                await this.page.locator('#page-feed-list-container').waitFor({ state: 'visible', timeout: 30000 });
-            }
 
         } catch (error) {
             console.error('Error clicking Create Page button:', error);
@@ -109,34 +104,6 @@ class PagesPage {
         await btn.waitFor({ state: 'visible', timeout: 30000 });
         await btn.click();
         console.log('Clicked Save & Share button.');
-    }
-
-    async clickMagicLinkAndClose() {
-        console.log('Handling Magic Link flow...');
-        const magicLink = this.page.locator('a[href*="feedspace.io/p/"]').first();
-
-        if (await magicLink.isVisible()) {
-            console.log('Magic link found, clicking...');
-            const [newPage] = await Promise.all([
-                this.page.context().waitForEvent('page'),
-                magicLink.click()
-            ]);
-
-            await newPage.waitForLoadState('domcontentloaded');
-            console.log(`Opened magic link share page: ${newPage.url()}`);
-
-            // Switch back to original page and close the new tab
-            await this.page.bringToFront();
-            await newPage.close();
-            console.log('Switched back and closed magic link tab.');
-        }
-
-        // Click the final close button on the modal if it exists
-        const closeBtn = this.page.locator('button.close-modal, button#yt-import-modal-close, button:has-text("Close")').first();
-        if (await closeBtn.isVisible()) {
-            await closeBtn.click();
-            console.log('Closed the shared modal.');
-        }
     }
 }
 
