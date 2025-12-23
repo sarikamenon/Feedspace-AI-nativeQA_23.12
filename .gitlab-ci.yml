@@ -1,0 +1,57 @@
+image: mcr.microsoft.com/playwright:v1.40.0-jammy
+
+stages:
+  - test
+  - report
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  PLAYWRIGHT_BROWSERS_PATH: "$CI_PROJECT_DIR/ms-playwright"
+
+cache:
+  paths:
+    - .npm/
+    - ms-playwright/
+
+before_script:
+  - npm ci
+
+test:
+  stage: test
+  script:
+    - npx playwright install --with-deps chromium
+    - npm test || true  # Continue even if tests fail
+  artifacts:
+    when: always
+    paths:
+      - report.json
+      - screenshots/
+    expire_in: 1 week
+  allow_failure: true
+
+generate_report:
+  stage: report
+  dependencies:
+    - test
+  script:
+    - npm run test:report
+  artifacts:
+    when: always
+    paths:
+      - cucumber-report.html
+    expire_in: 1 month
+  allow_failure: true
+
+# Optional: Run tests in parallel
+# test:parallel:
+#   stage: test
+#   parallel: 3
+#   script:
+#     - npx playwright install --with-deps chromium
+#     - npm test
+#   artifacts:
+#     when: always
+#     paths:
+#       - report.json
+#       - screenshots/
+#     expire_in: 1 week

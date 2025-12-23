@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Test Reports
+cucumber-report.html
+report.json
+allure-results/
+allure-report/
+
+# Screenshots and Videos
+screenshots/
+videos/
+test-results/
+
+# Playwright
+.playwright/
+ms-playwright/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# CI/CD
+.npm/

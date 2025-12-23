@@ -1,0 +1,27 @@
+{
+  "name": "feedspace-bdd-cucumber-pom",
+  "version": "1.0.0",
+  "description": "Feedspace Import Reviews Automation using Playwright and Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:import": "cucumber-js features/import_reviews.feature --format json:reports/cucumber-report.json",
+    "report": "node report.js"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "bdd",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^10.0.0",
+    "@playwright/test": "^1.40.0",
+    "chai": "^6.2.1"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^7.2.0"
+  }
+}

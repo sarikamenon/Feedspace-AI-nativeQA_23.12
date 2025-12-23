@@ -1,0 +1,236 @@
+[
+  {
+    "description": "  As a user, I want to import reviews from multiple platforms so that I can manage them in Feedspace.",
+    "elements": [
+      {
+        "description": "",
+        "id": "import-reviews;login-and-import-reviews-from-all-platforms-sequentially",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login and Import reviews from all platforms sequentially",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 239386999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the Feedspace sign-in page",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6962617000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter the email \"test1234@mailinator.com\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3019723600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on \"Send Sign-In Code\" button",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2115364700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I fetch the OTP from Mailinator for user \"test1234\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3489953999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter the retrieved OTP",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2046800999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3012185600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I should be redirected to the workspace",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2003615900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I should click on the button \"Launch Workspace\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85614900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should be redirected to the dashboard",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3014324100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "I click on the Pages link",
+            "match": {
+              "location": "step-definitions\\importSteps.js:124"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 120025799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "I click on the Create Page button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:134"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 28391092700,
+              "error_message": "locator.allInnerTexts: Target page, context or browser has been closed\n    at PagesPage.clickCreatePageButton (C:\\Playwright\\Feedspace-BDDcucumber-POM05.12\\pages\\PagesPage.js:26:63)\n    at async World.<anonymous> (C:\\Playwright\\Feedspace-BDDcucumber-POM05.12\\step-definitions\\importSteps.js:137:9)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "I select the first 5 reviews",
+            "match": {
+              "location": "step-definitions\\importSteps.js:144"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "I click on Save and Next button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:154"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "I click on Save and Next button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:154"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "I click on Save and Share button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:164"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 28357799
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "import-reviews",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Import Reviews",
+    "tags": [],
+    "uri": "features\\import_reviews.feature"
+  }
+]

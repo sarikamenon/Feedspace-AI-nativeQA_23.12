@@ -1,0 +1,1158 @@
+[
+  {
+    "description": "  As a developer, I want to debug the Create Page button failure.",
+    "elements": [
+      {
+        "description": "",
+        "id": "debug-create-page;login-and-try-create-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login and Try Create Page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 161758700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the Feedspace sign-in page",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2907039899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter the email \"test1235@mailinator.com\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2946089900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on \"Send Sign-In Code\" button",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2275533299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I fetch the OTP from Mailinator for user \"test1235\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3638927400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter the retrieved OTP",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2046278900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3013230900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I should be redirected to the workspace",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2009994600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I should click on the button \"Launch Workspace\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73957200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should be redirected to the dashboard",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3004825199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I click on the Pages link",
+            "match": {
+              "location": "step-definitions\\importSteps.js:124"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1094511900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click on the Create Page button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 133874700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 51651899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "debug-create-page",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Debug Create Page",
+    "tags": [],
+    "uri": "features\\debug_create_page.feature"
+  },
+  {
+    "description": "  As a user, I want to import reviews from multiple platforms so that I can manage them in Feedspace.",
+    "elements": [
+      {
+        "description": "",
+        "id": "import-reviews;login-and-import-reviews-from-all-platforms-sequentially",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login and Import reviews from all platforms sequentially",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 142672399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the Feedspace sign-in page",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3121365600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter the email \"test1235@mailinator.com\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2732991099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on \"Send Sign-In Code\" button",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2128506300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I fetch the OTP from Mailinator for user \"test1235\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3238251499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter the retrieved OTP",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2037492899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3014771400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I should be redirected to the workspace",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2013521800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I should click on the button \"Launch Workspace\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 78088600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should be redirected to the dashboard",
+            "match": {
+              "location": "step-definitions\\loginSteps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3007417499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I click on the Import option",
+            "match": {
+              "location": "step-definitions\\importSteps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 452949000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I navigate to the Import Reviews page",
+            "match": {
+              "location": "step-definitions\\importSteps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1081399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I select the import platform \"Import from Web Link\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1384541299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I read the JSON file, find the URL for platform \"Weblink\", and enter it into the URL text box",
+            "match": {
+              "location": "step-definitions\\importSteps.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17512600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click on the Import Reviews button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88126299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61888948299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I select the platform \"X (Twitter) Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88155800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I read the JSON file and enter the URL for \"X (Twitter) Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19306100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72976800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2948636299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I select the platform \"Facebook Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84421799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I read the JSON file and enter the URL for \"Facebook Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17938399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80537400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2946163599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "I select the platform \"Instagram Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80501499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "I read the JSON file and enter the URL for \"Instagram Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15557200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77956399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5988670899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 42,
+            "name": "I select the platform \"Threads Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 79422999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "I read the JSON file and enter the URL for \"Threads Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16250500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70338900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2940843499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "I select the platform \"LinkedIn Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 87068800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "I read the JSON file and enter the URL for \"LinkedIn Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19009799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 71542099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3952727299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "I select the platform \"YouTube Video\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 86120900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "I read the JSON file and enter the URL for \"YouTube Video\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19609599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 69914599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3931831900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 61,
+            "name": "I select the platform \"TikTok Video\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 256044499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "I read the JSON file and enter the URL for \"TikTok Video\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24175700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72887799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 64,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1917360000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 67,
+            "name": "I select the platform \"Reddit Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93913699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "I read the JSON file and enter the URL for \"Reddit Post\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27507199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85787799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 70,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1936802900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 73,
+            "name": "I select the platform \"Reddit Comment\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 75912900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "I read the JSON file and enter the URL for \"Reddit Comment\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18447100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73523900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1917226300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "I select the platform \"Facebook Reviews\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 152533100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "I read the JSON file and enter the URL for \"Facebook Reviews\"",
+            "match": {
+              "location": "step-definitions\\importSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21478800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 80,
+            "name": "I click on the Import Post button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30088154600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 81,
+            "name": "I verify that the import success message appears",
+            "match": {
+              "location": "step-definitions\\importSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 120019744199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 82,
+            "name": "I close the import modal",
+            "match": {
+              "location": "step-definitions\\importSteps.js:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 121553399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "I click on the Pages link",
+            "match": {
+              "location": "step-definitions\\importSteps.js:124"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1223033500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "I click on the Create Page button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 965579800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "I select the first 5 reviews",
+            "match": {
+              "location": "step-definitions\\importSteps.js:150"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 60019611199,
+              "error_message": "locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#page-feed-list-container') to be visible\u001b[22m\n\u001b[2m    119 × locator resolved to hidden <div class=\"group is-list\" id=\"page-feed-list-container\">…</div>\u001b[22m\n\n    at PagesPage.selectFirstFiveReviews (C:\\Playwright\\Feedspace-BDDcucumber-POM05.12\\pages\\PagesPage.js:44:25)\n    at World.<anonymous> (C:\\Playwright\\Feedspace-BDDcucumber-POM05.12\\step-definitions\\importSteps.js:153:30)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "I click on Save and Next button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:160"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "I click on Save and Next button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:160"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "I click on Save and Share button",
+            "match": {
+              "location": "step-definitions\\importSteps.js:170"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "I click on the magic link and switch back to the original tab",
+            "match": {
+              "location": "step-definitions\\shareSteps.js:4"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 90,
+            "name": "I click on the close button",
+            "match": {
+              "location": "step-definitions\\shareSteps.js:9"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 93,
+            "name": "I navigate to the Import Reviews page",
+            "match": {
+              "location": "step-definitions\\importSteps.js:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 94,
+            "name": "I import reviews for all remaining platforms in the JSON file",
+            "match": {
+              "location": "step-definitions\\importSteps.js:179"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 97,
+            "name": "I navigate to the Widgets page via menu",
+            "match": {
+              "location": "step-definitions\\widgetSteps.js:4"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 98,
+            "name": "I select the Carousel template",
+            "match": {
+              "location": "step-definitions\\widgetSteps.js:9"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 99,
+            "name": "I select the first 5 reviews for the widget",
+            "match": {
+              "location": "step-definitions\\widgetSteps.js:14"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "I click on Save and Next on widget page",
+            "match": {
+              "location": "step-definitions\\widgetSteps.js:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 101,
+            "name": "I click on Save and Share on widget page",
+            "match": {
+              "location": "step-definitions\\widgetSteps.js:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 102,
+            "name": "I click on the Widget Preview button",
+            "match": {
+              "location": "step-definitions\\widgetSteps.js:29"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 72070699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "import-reviews",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Import Reviews",
+    "tags": [],
+    "uri": "features\\import_reviews.feature"
+  }
+]
