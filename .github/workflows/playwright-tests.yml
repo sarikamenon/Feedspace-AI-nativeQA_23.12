@@ -1,0 +1,78 @@
+name: Playwright BDD Cucumber Tests - AI Native
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  schedule:
+    - cron: '0 5 * * *'  # 9:00 AM Dubai time (UTC+4 = 5:00 AM UTC)
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+
+jobs:
+  test:
+    timeout-minutes: 90
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+    
+    - name: Run Import Reviews Tests
+      run: |
+        mkdir -p reports screenshots
+        npx cucumber-js features/import_reviews.feature --format json:reports/cucumber-report.json
+      continue-on-error: true  # Continue to report generation even if tests fail
+    
+    - name: Generate HTML Report
+      if: always()
+      run: node report.js
+      continue-on-error: true
+    
+    - name: Generate Summary Report
+      if: always()
+      run: node generate-summary.js
+      continue-on-error: true
+    
+    - name: Upload Test Results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: |
+          reports/cucumber-report.html
+          reports/cucumber-report.json
+          summary-report.json
+        retention-days: 30
+    
+    - name: Upload Screenshots (if any)
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: screenshots
+        path: screenshots/
+        retention-days: 30
+        if-no-files-found: ignore
+    
+    - name: Publish Test Report Summary
+      if: always()
+      run: |
+        echo "## 🤖 AI-Native Test Execution Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ -f summary-report.json ]; then
+          node generate-summary.js
+        else
+          echo "⚠️ Summary report not generated" >> $GITHUB_STEP_SUMMARY
+        fi
