@@ -2,6 +2,7 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('chai');
 const { LoginPage } = require('../pages/LoginPage');
 const { MailinatorPage } = require('../pages/MailinatorPage');
+const { EtherealEmailPage } = require('../pages/EtherealEmailPage');
 
 Given('I navigate to the Feedspace sign-in page', async function () {
     this.loginPage = new LoginPage(this.page);
@@ -20,6 +21,20 @@ When('I click on "Send Sign-In Code" button', async function () {
 When('I fetch the OTP from Mailinator for user {string}', async function (username) {
     const mailinator = new MailinatorPage(this.context); // Access context from World
     this.fetchedOtp = await mailinator.getOtp(username);
+});
+
+When('I generate and enter an Ethereal test email', async function () {
+    this.etherealEmail = new EtherealEmailPage(this.context);
+    this.testEmail = await this.etherealEmail.getTestEmail();
+    console.log(`[Test] Using Ethereal email: ${this.testEmail}`);
+    await this.loginPage.enterEmail(this.testEmail);
+});
+
+When('I fetch the OTP from Ethereal', async function () {
+    if (!this.etherealEmail) {
+        this.etherealEmail = new EtherealEmailPage(this.context);
+    }
+    this.fetchedOtp = await this.etherealEmail.getOtp();
 });
 
 When('I enter the retrieved OTP', async function () {
