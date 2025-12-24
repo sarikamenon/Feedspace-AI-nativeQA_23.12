@@ -8,7 +8,11 @@ let context;
 let page;
 
 BeforeAll(async function () {
-    browser = await chromium.launch({ headless: false }); // Headed mode for cookie extraction
+    const isCI = process.env.CI || process.env.GITHUB_ACTIONS;
+    browser = await chromium.launch({
+        headless: isCI ? true : false,
+        args: isCI ? ['--no-sandbox', '--disable-setuid-sandbox'] : []
+    });
 });
 
 AfterAll(async function () {
