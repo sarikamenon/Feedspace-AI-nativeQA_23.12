@@ -2,9 +2,11 @@ name: Playwright BDD Cucumber Tests
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [ main, master ]
+  schedule:
+    - cron: '0 9 * * *'  # Run daily at 9:00 AM UTC
   workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 jobs:
@@ -35,7 +37,7 @@ jobs:
       run: npx playwright install --with-deps chromium
     
     - name: Run Cucumber Tests
-      run: npm test
+      run: npm run test:import
       continue-on-error: true  # Continue to report generation even if tests fail
     
     - name: Generate HTML Report
@@ -49,8 +51,9 @@ jobs:
       with:
         name: test-results-${{ matrix.shard }}
         path: |
-          cucumber-report.html
-          report.json
+          reports/cucumber-report.html
+          reports/cucumber-report.json
+          summary-report.json
         retention-days: 30
     
     - name: Upload Screenshots (if any)

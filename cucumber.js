@@ -2,7 +2,7 @@ module.exports = {
   default: {
     paths: ['features/**/*.feature'],
     require: ['step-definitions/**/*.js', 'support/**/*.js'],
-    format: ['progress-bar', 'html:cucumber-report.html'],
+    format: ['progress-bar', 'html:reports/cucumber-report.html', 'json:reports/cucumber-report.json'],
     formatOptions: { snippetInterface: 'async-await' },
   },
 };
